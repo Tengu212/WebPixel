@@ -407,27 +407,4 @@ footer {
     box-sizing: border-box;
 }
 
-@media (max-width: 400px) {
-    header, footer, main {
-        max-width: 100%;
-    }
-    
-    header {
-        flex-direction: column;
-        height: auto;
-        text-align: center;
-        padding: 0.7rem 0.5rem;
-        font-size: 0.85rem;
-    }
 
-    footer {
-        font-size: 0.75rem;
-        padding: 0.4rem;
-    }
-
-    form input {
-        width: calc(100% - 50px);
-        margin-left: 25px;
-        margin-right: 25px;
-    }
-}
