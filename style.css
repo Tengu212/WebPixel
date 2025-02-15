@@ -407,7 +407,7 @@ footer {
     box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     header, footer, main {
         max-width: 100%;
     }
