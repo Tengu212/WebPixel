@@ -409,7 +409,7 @@ footer {
 
 @media (max-width: 600px) {
     header, footer, main {
-        max-width: 90%;
+        max-width: 100%;
     }
     
     header {
