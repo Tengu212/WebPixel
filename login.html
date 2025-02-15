@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    function validateLoginForm(event) {
+      event.preventDefault(); // Предотвращаем отправку формы
+
+      // Получаем значения полей
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const emailError = document.getElementById("email-error");
+      const passwordError = document.getElementById("password-error");
+
+      let isValid = true;
+      emailError.textContent = "";
+      passwordError.textContent = "";
+
+      // Проверка email
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!email.match(emailPattern)) {
+        emailError.textContent = "Введите корректный email.";
+        isValid = false;
+      }
+
+      // Проверка пароля
+      if (password.length < 6) {
+        passwordError.textContent = "Пароль должен содержать минимум 6 символов.";
+        isValid = false;
+      }
+
+      if (isValid) {
+        alert("Вход выполнен успешно!");
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "index.html"; // Переход на главную страницу
+      }
+    }
+
+    function clearError(event) {
+      document.getElementById(event.target.id + "-error").textContent = "";
+    }
+
+    function handleCredentialResponse(response) {
+      console.log("Google ID Token: ", response.credential);
+      localStorage.setItem("isLoggedIn", "true");
+      window.location.href = "index.html";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <!-- Можно добавить навигацию или логотип -->
+  </header>
+  
+  <main class="login-form">
+    <h1>Вход</h1>
+    <form onsubmit="validateLoginForm(event)">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Введите ваш email" required oninput="clearError(event)">
+      <p class="error" id="email-error"></p>
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введите ваш пароль" required oninput="clearError(event)">
+      <p class="error" id="password-error"></p>
+
+      <p class="register-link">
+        Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+      </p>
+
+      <button type="submit" class="login-button">Войти</button>
+    </form>
+
+    <div id="g_id_onload"
+         data-client_id="287530289949-nojikc8bpv5om1ode87hb8d6nudm7b1i.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+
+    <div class="g_id_signin"
+         data-type="standard"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Все права защищены</p>
+  </footer>
+</body>
+</html>
+

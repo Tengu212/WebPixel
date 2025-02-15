@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заказа</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Основной контент -->
+  <main>
+    <!-- Форма заказа -->
+    <form class="order-form">
+      <h2>Купить пикселей</h2>
+    
+      <label for="first-name">Имя:</label>
+      <input type="text" id="first-name" name="first-name" placeholder="Ваше имя" required>
+    
+      <label for="last-name">Фамилия:</label>
+      <input type="text" id="last-name" name="last-name" placeholder="Ваша фамилия" required>
+    
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Ваш email" required>
+    
+      <label for="website">Ссылка на ваш сайт:</label>
+      <input type="url" id="website" name="website" placeholder="https://example.com">
+    
+      <label for="image">Загрузите изображение:</label>
+      <input type="file" id="image" name="image" accept="image/*">
+    
+      <label for="pixel-width">Ширина (в пикселях):</label>
+      <input type="number" id="pixel-width" name="pixel-width" min="1" value="1">
+    
+      <label for="pixel-height">Высота (в пикселях):</label>
+      <input type="number" id="pixel-height" name="pixel-height" min="1" value="1">
+    
+      <p>Цена за пиксель: $1</p>
+    
+      <p id="total-price" style="font-size: 1.2rem; font-weight: bold; margin-top: 10px;">
+      </p>
+    </form>    
+
+
+    <!-- Способы оплаты -->
+    <h1>Выберите способ оплаты</h1>
+    <div class="payment-grid">
+      <div class="payment-item"><img src="img/visa.png" alt="Visa"></div>
+      <div class="payment-item"><img src="img/paypal.png" alt="PayPal"></div>
+      <div class="payment-item"><img src="img/mastercard.png" alt="MasterCard"></div>
+      <div class="payment-item"><img src="img/sbp.png" alt="СБП"></div>
+    </div>
+
+    <!-- Блок данных карты -->
+    <div class="card-details">
+      <label for="card-number">Номер карты:</label>
+      <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+      
+      <label for="expiry-date">Срок действия:</label>
+      <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+      
+      <label for="cvv">CVC/CVV-код:</label>
+      <input type="password" id="cvv" name="cvv" placeholder="123" required>
+    </div>
+
+    <button class="payment-button" onclick="location.href='index.html'">оплатить</button>
+  </main>
+
+  <script src="preview.js"></script>
+</body>
+</html>

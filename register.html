@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function validateForm(event) {
+      event.preventDefault(); // Предотвращаем отправку формы, чтобы проверить данные
+
+      // Получаем значения из формы
+      const email = document.getElementById("email").value;
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+
+      let errors = [];
+
+      // Проверка на email
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!email.match(emailPattern)) {
+        errors.push("Пожалуйста, введите корректный email.");
+      }
+
+      // Проверка на совпадение паролей
+      if (password !== confirmPassword) {
+        errors.push("Пароли не совпадают.");
+      }
+
+      // Если есть ошибки, выводим их
+      if (errors.length > 0) {
+        alert(errors.join("\n"));
+      } else {
+        // Если ошибок нет, переходим на страницу входа (пока можно заменить на alert)
+        alert("Регистрация прошла успешно!");
+        window.location.href = "login.html"; // Переход на страницу входа
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <!-- Можно добавить навигацию или логотип -->
+  </header>
+  
+  <main class="register-form">
+    <h1>Регистрация</h1>
+    <form onsubmit="validateForm(event)">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+
+      <label for="username">Имя пользователя:</label>
+      <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введите ваш пароль" required>
+      
+      <label for="confirm-password">Подтвердите пароль:</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Подтвердите ваш пароль" required>
+
+      <!-- Ссылка на страницу входа -->
+      <p class="login-link">
+        Уже есть аккаунт? <a href="login.html">Войти</a>
+      </p>
+
+      <button type="submit" class="register-button">Зарегистрироваться</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Все права защищены</p>
+  </footer>
+</body>
+</html>

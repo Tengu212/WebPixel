@@ -1,0 +1,435 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Хедер */
+header {
+    background-color: #222;
+    color: white;
+    padding: 0.2rem 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header nav a {
+    color: white;
+    font-size: 1rem;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для формы заказа */
+.order-form {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-form label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.order-form input[type="text"],
+.order-form input[type="email"],
+.order-form input[type="number"] {
+    width: 90%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.pixel-info {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.order-form input[type="file"] {
+    margin-bottom: 1.5rem;
+}
+
+.order-form input[type="submit"] {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #222;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-form input[type="submit"]:hover {
+    background-color: #151515;
+}
+
+/* Способы оплаты */
+main {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    padding: 3rem 35rem;
+}
+
+.payment-item img {
+    width: 100px;
+    transition: transform 0.3s;
+}
+
+.payment-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Стиль для кнопки перехода к оплате */
+.payment-button {
+    display: block; /* Центрирование кнопки */
+    margin: 2rem auto 0; /* Центрируем и задаем отступ сверху */
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #222;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.payment-button:hover {
+    background-color: #131313;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Новый блок: Ввод данных карты */
+.card-details {
+    margin: 2rem auto 3rem;
+    padding: 1.5rem;
+    background-color: #f3f4f6;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    border: 1px solid #d1d5db;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-details label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #333;
+    text-align: center;
+}
+.card-details input {
+    width: 90%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+.card-details input::placeholder {
+    color: #94a3b8;
+}
+.card-details input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0px 0px 6px rgba(59, 130, 246, 0.5);
+}
+
+/* Футер */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+
+    /* Форма заказа */
+.order-form {
+    width: 90%;
+    max-width: 600px;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-form label {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.order-form input[type="text"],
+.order-form input[type="email"],
+.order-form input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Способы оплаты */
+.payment-grid {
+    width: 90%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.payment-item:hover {
+    background: #f0f0f0;
+}
+
+.payment-item img {
+    width: 80px;
+}
+
+/* Ввод данных карты */
+.card-details {
+    width: 90%;
+    max-width: 600px;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-details input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Кнопка оплаты */
+.payment-button {
+    width: 90%;
+    max-width: 600px;
+    padding: 1rem;
+    background: #222;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.payment-button:hover {
+    background: #131313;
+}
+
+/* Для планшетов */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .payment-grid {
+        padding: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .payment-item img {
+        width: 90px;
+    }
+
+    .payment-button {
+        width: 80%;
+    }
+}
+
+
+
+
+header, footer {
+    background-color: #222;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+}
+
+form {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+form input {
+    width: calc(100% - 10px);
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+form button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #222;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.register-link, .login-link {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.register-link a, .login-link a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.register-link a:hover, .login-link a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    header, footer, main {
+        max-width: 90%;
+    }
+    
+    header {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 0.7rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    footer {
+        font-size: 0.75rem;
+        padding: 0.4rem;
+    }
+
+    form input {
+        width: calc(100% - 50px);
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
